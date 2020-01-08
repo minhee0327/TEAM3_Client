@@ -8,7 +8,7 @@ class Menu extends Component {
         localStorage.removeItem('usertoken');
         alert("로그아웃 되었습니다.");
         this.props.history.push(`/`);
-        //window.location.reload();
+        window.location.reload();
     }
     render() {
         let logout;

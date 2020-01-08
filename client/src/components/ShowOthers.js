@@ -66,7 +66,7 @@ class ShowOthers extends React.Component {
 
   nextPage() {
     const rowsPerPage = 3;
-    if (this.state.page < (this.state.length / rowsPerPage) - 1) {
+    if (this.state.page < Math.ceil(this.state.length / rowsPerPage) - 1) {
       //  this.setState({
       //   page: this.state.page+1
       //  });

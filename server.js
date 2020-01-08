@@ -31,7 +31,7 @@ app.use('/image', express.static('./upload'));
 
 
 app.get('/api/showOthers/:show_id/:page', (req, res) => {
-  const rowsPerPage = 1;
+  const rowsPerPage = 3;
   let sql = 'select * from `show` where troup_id in(select troup_id from `show` where show_id = ?) limit ?,?'
   let show_id = req.params.show_id;
   let page = req.params.page
@@ -54,7 +54,7 @@ app.get('/api/showOthersAll/:show_id', (req, res) => {
 
 app.get('/api/showAll/:user_id', (req, res) => {
   let user_id = req.params.user_id;
-  const rowsPerPage = 2;
+  const rowsPerPage = 3;
   console.log(user_id);
   let params = [user_id,rowsPerPage];
   let sql = 'select * from `show`where not show_id in (select show_id from exclude_show where user_id = ?) limit 0,?';
@@ -80,7 +80,7 @@ app.get('/api/countShowAll/:user_id', (req, res) => {
 });
 
 app.get('/api/showAll/:user_id/:page', (req, res) => {
-  const rowsPerPage = 2;
+  const rowsPerPage = 3;
   let user_id = req.params.user_id;
   let page = req.params.page
   let sql =  'select * from `show` where not show_id in (select show_id from exclude_show where user_id = ?) limit ?,?';
@@ -97,7 +97,7 @@ app.get('/api/showAll/:user_id/:page', (req, res) => {
 
 app.get('/api/showRomance/:user_id', (req, res) => {
   let user_id = req.params.user_id;
-  const rowsPerPage = 2;
+  const rowsPerPage = 3;
   console.log(user_id);
   let params = [user_id,rowsPerPage];
   let sql = 'select * from `show`where not show_id in (select show_id from exclude_show where user_id = ?) and genre_id =1 limit 0,?';
@@ -123,7 +123,7 @@ app.get('/api/countShowRomance/:user_id', (req, res) => {
 });
 
 app.get('/api/showRomance/:user_id/:page', (req, res) => {
-  const rowsPerPage = 2;
+  const rowsPerPage = 3;
   let user_id = req.params.user_id;
   let page = req.params.page
   let sql =  'select * from `show` where not show_id in (select show_id from exclude_show where user_id = ?) and genre_id =1 limit ?,?';

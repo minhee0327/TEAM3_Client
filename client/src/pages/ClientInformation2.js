@@ -21,6 +21,7 @@ class ClientInformation2 extends React.Component {
         }
         this.stateRefresh = this.stateRefresh.bind(this)
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
+        his.handleClear = this.handleClear.bind(this)
         this.handleValueChange = this.handleValueChange.bind(this)
         this.changeinformation = this.changeinformation.bind(this)
     }
@@ -67,6 +68,11 @@ class ClientInformation2 extends React.Component {
             exclude_show: ''
         })
         // window.location.reload()
+        this.props.history.push('/main')
+    }
+
+    handleClear(e) {
+        console.log(this.props)
         this.props.history.push('/main')
     }
 
@@ -133,7 +139,7 @@ class ClientInformation2 extends React.Component {
                 <Button>추가</Button><br />
                 제외된목록: <Button>목록보기</Button><br /> */}
                 <Button onClick={this.handleFormSubmit}>확인</Button>
-                <Button >취소</Button>
+                <Button onClick={this.handleClear}>취소</Button>
             </div>
         )
 

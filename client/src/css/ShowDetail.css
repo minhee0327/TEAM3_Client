@@ -39,3 +39,7 @@ input{
 .MuiFormControl-root .MuiInput-root .MuiInputBase-input {
     color: black;
 }
+
+.MuiTableCell-root img{
+    width: 400px;
+}

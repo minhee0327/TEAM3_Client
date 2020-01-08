@@ -159,7 +159,7 @@ class Home extends Component {
   }
 
   nextPage(genre) {
-    const rowsPerPage = 2;
+    const rowsPerPage = 3;
    
     switch(genre) {
       case "all": {

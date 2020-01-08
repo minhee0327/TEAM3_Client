@@ -65,7 +65,7 @@ class ShowOthers extends React.Component {
   }
 
   nextPage() {
-    const rowsPerPage = 1;
+    const rowsPerPage = 3;
     if (this.state.page < (this.state.length / rowsPerPage) - 1) {
       //  this.setState({
       //   page: this.state.page+1
@@ -85,6 +85,8 @@ class ShowOthers extends React.Component {
             <TableRow>
               <TableCell></TableCell>
               <TableCell>모든 상영작 </TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
               <TableCell></TableCell>
               {/* <TableCell><NavLink to="/entireShowAll">+더보기</NavLink></TableCell> */}
             </TableRow>

@@ -228,7 +228,7 @@ app.get('/api/showReview/:show_id',(req, res) => {
 
 
 app.post('/api/insertReview', (req, res) => {
-  let sql = 'insert into review values ((select * from (select ifnull(cast(count(review_id) as unsigned)+1,0) from review) as tmp),(select ticketing_id from ticketing as t '+
+  let sql = 'insert into review values ((select * from (select ifnull(cast(count(review_id) as unsigned)+1,0) from review) as tmp),(select distinct ticketing_id from ticketing as t '+
   'join user as u on t.user_id = u.user_id where u.user_id = ? and show_id=?),?,?,0,now())';
   let user_id = req.body.user_id;
   let show_id =  req.body.show_id;
@@ -258,7 +258,7 @@ app.post('/api/ticket', (req, res) => {
 });
 
 app.post('/api/audience', (req, res) => {
-  let sql = 'insert into audience_count values ((select * from (select ifnull(max(audience_count_id),0) from audience_count) as tmp)+1,(select ticketing_id from ticketing as t join user as u on t.user_id = u.user_id where u.user_id = ? and show_id=?),?,?,?,?,?,?,?,?,?,?,?,?)';
+  let sql = 'insert into audience_count values ((select * from (select ifnull(max(audience_count_id),0) from audience_count) as tmp)+1,(select distinct ticketing_id from ticketing as t join user as u on t.user_id = u.user_id where u.user_id = ? and show_id=?),?,?,?,?,?,?,?,?,?,?,?,?)';
   let user_id = req.body.user_id;
   let show_id =  req.body.show_id;
   let basic =  req.body.basic;

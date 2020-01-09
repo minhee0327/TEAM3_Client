@@ -21,7 +21,7 @@ class ClientInformation2 extends React.Component {
         }
         this.stateRefresh = this.stateRefresh.bind(this)
         this.handleFormSubmit = this.handleFormSubmit.bind(this)
-        his.handleClear = this.handleClear.bind(this)
+        this.handleClear = this.handleClear.bind(this)
         this.handleValueChange = this.handleValueChange.bind(this)
         this.changeinformation = this.changeinformation.bind(this)
     }
